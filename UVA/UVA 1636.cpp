@@ -5,9 +5,9 @@
  		- Just compare the two probabilities.
  		  The probability of finding a zero, and the probability of shooting 2 consecutive zeros.
 		
- 		numbr of zeros		number of zeros followed by another zero
+ 		number of zeros		number of zeros followed by another zero
 		--------------	  ?    ----------------------------------------
-			  n			number of zeros
+		      n		         	  number of zeros
 */
 
 #include <bits/stdc++.h>
