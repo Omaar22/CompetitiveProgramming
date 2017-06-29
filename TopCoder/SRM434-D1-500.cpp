@@ -1,7 +1,7 @@
 /*
 	Author: Omar22
 	Idea: the result = summation of the input numbers + the maximum addition can be made by changing k digits
- 		the maximum addition can be calculation by dp:
+ 		the maximum addition can be calculated by dp:
  		state: (index of digit, remaining changes)
 */
 
