@@ -5,7 +5,7 @@
  		for each i calculate b (number of boxed needed for city i) such that:
  		a[i]	   mid
 		----  <=  ------
-		  b		    1
+		  b         1
 */
 
 #include <bits/stdc++.h>
