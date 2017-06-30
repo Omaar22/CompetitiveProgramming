@@ -2,8 +2,8 @@
 	Author: Omar22
 	Idea: The problem is two parts 
 		1) Check cycles, 'color' array represent the state of node:- 
-		  0 (white): not visited in stack, 1 (grey): visited and in stack, 2 (black): visited and not in stack. 
-		2) Check if there is only one topological order, this can be done by by doing topological sort twice then compare the output, 
+		  0 (white): not visited and not in stack, 1 (grey): visited and in stack, 2 (black): visited and not in stack. 
+		2) Check if there is only one topological order, this can be done by by doing topological sort twice then compare the output
 		  one by visiting children from left to right, and another by right to left
 */
 
@@ -101,4 +101,3 @@ int main() {
 	
 	return 0;
 }
-
