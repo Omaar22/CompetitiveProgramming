@@ -1,12 +1,4 @@
-/*
-	Author: Omar22
-	Idea: The problem is two parts 
-		1) Check cycles, 'color' array represent the state of node:- 
-		  0 (white): not visited and not in stack, 1 (grey): visited and in stack, 2 (black): visited and not in stack. 
-		2) Check if there is only one topological order, this can be done by by doing topological sort twice then compare the output
-		  one by visiting children from left to right, and another by right to left
-*/
-
+// todo: change output messages: 0 1 2  
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -25,78 +17,68 @@ bool isCycle(int node) {
 	color[node] = 2;
 	return ret;
 }
-vector<int> topologicalLeft, topologicalRight;
-bool visLeft[N], visRight[N];
-void goLeft(int node) {
-	if (visLeft[node]++)
-		return;
-	for (auto child: adj[node]) {
-		goLeft(child);
-	}
-	topologicalLeft.push_back(node);
-}
-void goRight(int node) {
-	if (visRight[node]++)
-		return;
-	for (int i = adj[node].size() - 1; i >= 0; --i) {
-		goRight(adj[node][i]);
-	}
-	topologicalRight.push_back(node);
-}
 int main() {
 #ifndef ONLINE_JUDGE
 	freopen("input.in", "r", stdin);
 #endif
-	int t;
-	scanf("%d", &t);
-	while (t--) {
-		topologicalRight.clear();
-		topologicalLeft.clear();
+	while (true) {
 		for (int i = 1; i <= n; ++i)
 			adj[i].clear();
-		memset(visLeft, 0, sizeof visLeft);
-		memset(visRight, 0, sizeof visRight);
 		memset(color, 0, sizeof color);
 		scanf("%d %d", &n, &m);
-		vector<bool> isRoot(N, 1);
+		if (n == 0 && m == 0)
+			break;
+		int inGoing[N] = {};
 		for (int i = 0; i < m; ++i) {
 			int u, v;
 			scanf("%d %d", &u, &v);
-			adj[v].push_back(u);
-			isRoot[u] = false;
+			assert(u != v);
+			adj[u].push_back(v);
+			++inGoing[v];
 		}
-		bool recheck = false;
+		bool cycle = false;
 		for (int i = 1; i <= n; ++i) {
 			if (isCycle(i)) {
-				recheck = true;
+				cycle = true;
 			}
 		}
-		if (recheck) {
-			printf("recheck hints\n");
+		if (cycle) {
+			printf("0\n");
 			continue;
 		}
 		int root = 0;
 		for (int i = 1; i <= n; ++i) {
-			if (isRoot[i]) {
-				if (root == 0)
+			if (!inGoing[i]) {
+				if (root == 0) {
 					root = i;
-				else
+				} else {
 					root = -1;
+				}
 			}
 		}
 		if (root <= 0) {
-			printf("missing hints\n");
+			printf("2\n");
 			continue;
 		}
-		goLeft(root);
-		goRight(root);
-		if (topologicalRight == topologicalLeft) {
-			for (auto node: topologicalRight)
-				printf("%d ", node);
-			printf("\n");
-		} else {
-			printf("missing hints\n");
+		queue<int> q;
+		q.push(root);
+		bool unique = true;
+		while (q.size()) {
+			if (q.size() > 1)
+				unique = false;
+			auto node = q.front();
+			q.pop();
+			for (auto child: adj[node]) {
+				--inGoing[child];
+				if (!inGoing[child]) {
+					q.push(child);
+				}
+			}
 		}
+		if (unique)
+			printf("1\n");
+		else
+			printf("2\n");
 	}
 	
 	return 0;
