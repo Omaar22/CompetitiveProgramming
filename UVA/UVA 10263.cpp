@@ -9,7 +9,7 @@ using namespace std;
 double f(double x1, double y1, double x2, double y2, double x, double targetX, double targetY) {
 //		(y1 - y2) * x + (x2 - x1) * y + (x1 * y2 - x2 * y1) = 0;
 	double y = ((y1 - y2) * x + (x1 * y2 - x2 * y1)) / -(x2 - x1);
-	return (x - targetX) * (x - targetX) + (y - targetY) * (y - targetY);
+	return hypot(x - targetX, y - targetY);
 }
 int main() {
 #ifndef ONLINE_JUDGE
@@ -52,5 +52,6 @@ int main() {
 		}
 		printf("%.4lf\n%.4lf\n", resultX, resultY);
 	}
-	return 0;	
+	return 0;
+	
 }
