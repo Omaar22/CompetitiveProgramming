@@ -39,7 +39,7 @@ int main() {
 			mini = dis;
 			resultX = l;
 			resultY = ((y1 - y2) * resultX + (x1 * y2 - x2 * y1)) / -(x2 - x1);
-			if (x2 == x1) {
+			if (x2 == x1) { // handle vertical lines
 				if (y1 <= y && y <= y2 || y2 <= y && y <= y1)
 					resultY = y;
 				else if (y <= min(y1, y2))
