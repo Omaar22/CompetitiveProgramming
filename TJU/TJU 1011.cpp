@@ -33,11 +33,9 @@ int main() {
 	int t;
 	scanf("%d", &t);
 	for (int test = 1; test <= t; ++test) {
-		int x[N], y[N];
-		int n;
+		int x[N], y[N], n, onEdges = 0;
 		scanf("%d", &n);
 		x[0] = y[0] = 0;
-		int onEdges = 0;
 		for (int i = 1; i <= n; ++i) {
 			int a, b;
 			scanf("%d %d", &a, &b);
