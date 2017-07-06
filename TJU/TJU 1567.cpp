@@ -1,6 +1,6 @@
 /*
 	author: omar22
-	idea: calculate intersection point using cross product
+	idea: calculate intersection point
  */
 #include <bits/stdc++.h>
 
