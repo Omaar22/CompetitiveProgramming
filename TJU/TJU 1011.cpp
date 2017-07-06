@@ -3,7 +3,7 @@
 	idea: the problem is 3 parts:
 	 		area => shoelace formula
 	 		lattice points inside polygon => Pick's theorem
-	 		lattice points on borders => sum for each border: gcd(change in x, change in y)
+	 		lattice points on each border => gcd(change in x, change in y)
  */
 #include <bits/stdc++.h>
 
@@ -41,7 +41,7 @@ int main() {
 			scanf("%d %d", &a, &b);
 			x[i] = x[i - 1] + a;
 			y[i] = y[i - 1] + b;
-			onEdges += __gcd(abs(x[i] - x[i - 1]), abs(y[i] - y[i - 1])); // lattice points on line = gcd(change in x, change in y)
+			onEdges += __gcd(abs(x[i] - x[i - 1]), abs(y[i] - y[i - 1])); // lattice points on line
 		}
 		double area = polygonArea(x, y, n);
 		printf("Scenario #%d:\n%d %d %.1lf\n\n", test, inside(area, onEdges), onEdges, area);
