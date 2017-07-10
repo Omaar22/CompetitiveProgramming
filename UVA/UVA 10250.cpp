@@ -1,7 +1,7 @@
 /*
 	author: omar22
 	idea: since there are infinite solutions (different square sides),
- 		just calculate the perpendicular vectors (assume it is almost = 0)
+ 		just calculate the perpendicular vectors (assume side is almost = 0)
  */
 #include <bits/stdc++.h>
 
