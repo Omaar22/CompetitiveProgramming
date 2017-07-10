@@ -1,11 +1,11 @@
 /*
 	author: omar22
 	idea:
- 			- assume that the center of the table (the big circle) is the origin (0, 0)
- 			- draw a sector that completely covers a plate (the small circle) from the center of the table
- 			- calculate the angle of the drawn sector:
- 			- used ternary search to find the point on a plate that is tangent to the sector (so it will completely cover the plate)
- 			- if angle * n <= 360 then plates can fit on the table
+ 		- assume that the center of the table (the big circle) is the origin (0, 0)
+ 		- draw a sector that completely covers a plate (the small circle) from the center of the table
+ 		- calculate the angle of the drawn sector:
+ 		- used ternary search to find the point on a plate that is tangent to the sector (so it will completely cover the plate)
+ 		- if angle * n <= 360 then plates can fit on the table
  */
 #include <bits/stdc++.h>
 
