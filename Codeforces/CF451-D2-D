@@ -14,8 +14,8 @@ idea:
 			- now only one substring left uncalculated this string could be even or odd length 
 			  depending on sum of frequencies between i and j (inclusive)
 			- if the sum of frequencies is even then that substring is even length otherwise it is odd
-
 - doing too many cumulative arrays of frequencies of each type would help calculate for each j without loop
+- then for each single character in the compressed string calculate the even/odd substrings 
 
 *time complexity O(n)
  */
