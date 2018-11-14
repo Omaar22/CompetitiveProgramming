@@ -1,22 +1,23 @@
 /*
-	author: omar22
-	idea:
- 		- compress original string to another string where no 2 consecutive characters are equal
- 		- calculate the frequency of each character of the compressed string
- 		- assume the following:
- 			- loop for each index i:
- 				- loop for each index j greater than i:
- 					- if compressed[j] == compressed[i] then the substring from i to j is a palindrome (in the compressed string)
- 					  you need to count the number of substring in the original string making this compressed string
-					- the total number those substrings = freq[i] * freq[j]
-					- if freq[i] * freq[j] is even then exactly half of them is even length and half of them is odd length *think about it*
-					- otherwise (freq[i] * freq[j] - 1) / 2 is even lengths and (freq[i] * freq[j] - 1) / 2 is odd lengths
-					- now only one substring left uncalculated this string could be even or odd length depending on sum of frequencies between i and j (inclusive)
-					- if the sum of frequencies is even then that substring is even length otherwise it is odd
-					
-		- doing too many cumulative arrays of frequencies of each type would help calculate for each j without loop
-	
- 		*time complexity O(n)
+author: omar22
+idea:
+- compress original string to another string where no 2 consecutive characters are equal
+- calculate the frequency of each character of the compressed string
+- assume the following:
+	- loop for each index i:
+		- loop for each index j greater than i:
+			- if compressed[j] == compressed[i] then the substring from i to j is a palindrome (in the compressed string)
+			  you need to count the number of substring in the original string making this compressed string
+			- the total number those substrings = freq[i] * freq[j]
+			- if freq[i] * freq[j] is even then exactly half of them is even length and half of them is odd length 
+			- otherwise (freq[i] * freq[j] - 1) / 2 is even lengths and (freq[i] * freq[j] - 1) / 2 is odd lengths
+			- now only one substring left uncalculated this string could be even or odd length 
+			depending on sum of frequencies between i and j (inclusive)
+			- if the sum of frequencies is even then that substring is even length otherwise it is odd
+
+- doing too many cumulative arrays of frequencies of each type would help calculate for each j without loop
+
+*time complexity O(n)
  */
 
 #include <bits/stdc++.h>
