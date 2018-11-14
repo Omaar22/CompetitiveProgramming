@@ -12,7 +12,7 @@ idea:
 			- if freq[i] * freq[j] is even then exactly half of them is even length and half of them is odd length 
 			- otherwise (freq[i] * freq[j] - 1) / 2 is even lengths and (freq[i] * freq[j] - 1) / 2 is odd lengths
 			- now only one substring left uncalculated this string could be even or odd length 
-			depending on sum of frequencies between i and j (inclusive)
+			  depending on sum of frequencies between i and j (inclusive)
 			- if the sum of frequencies is even then that substring is even length otherwise it is odd
 
 - doing too many cumulative arrays of frequencies of each type would help calculate for each j without loop
