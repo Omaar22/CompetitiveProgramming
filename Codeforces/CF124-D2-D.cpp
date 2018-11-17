@@ -8,7 +8,7 @@
  		Assume there was only one condition, then the answer equals the number of lines between the 2 points
  		(you can't go over the line without touching it)
  		Now with the two condition one can move few steps (without touching a bad cell) to reach
- 		a cell that is bad from the first and the second condition
+ 		a cell that is bad from the first and the second condition (intersection cell)
  		
  		that makes the answer = maximum between (the number of lines between the 2 points from the first, and the second conditions)
  		
